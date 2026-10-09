@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import "./Footer.css";
 
@@ -45,11 +46,11 @@ function Footer() {
 
         <div className="footer__links">
           <nav className="footer__navigation" aria-label={content.navigationLinksLabel}>
-            <a href="/#sobre-mi">{content.about}</a>
-            <a href="/#lo-que-construyo">{content.whatIBuild}</a>
-            <a href="/#stack">{content.stack}</a>
-            <a href="/#experiencia">{content.experience}</a>
-            <a href="/#proyectos">{content.projects}</a>
+            <Link to={{ pathname: "/", hash: "#sobre-mi" }}>{content.about}</Link>
+            <Link to={{ pathname: "/", hash: "#lo-que-construyo" }}>{content.whatIBuild}</Link>
+            <Link to={{ pathname: "/", hash: "#stack" }}>{content.stack}</Link>
+            <Link to={{ pathname: "/", hash: "#experiencia" }}>{content.experience}</Link>
+            <Link to={{ pathname: "/", hash: "#proyectos" }}>{content.projects}</Link>
           </nav>
 
           <nav className="footer__contact-links" aria-label={content.contactLinksLabel}>
@@ -58,7 +59,7 @@ function Footer() {
             <a href={`mailto:${EMAIL_ADDRESS}`}>{content.contact}</a>
           </nav>
 
-          <a className="footer__back-to-top" href="/">{content.backToTop}</a>
+          <Link className="footer__back-to-top" to="/">{content.backToTop}</Link>
         </div>
       </div>
       <p className="footer__copyright">© {new Date().getFullYear()} Ezequiel. {content.rights}</p>

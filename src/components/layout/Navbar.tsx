@@ -47,9 +47,9 @@ function Navbar() {
   return (
     <header className="navbar">
       <nav className="navbar__content" aria-label={content.mainNavigation}>
-        <a className="navbar__logo" href="/" onClick={closeMenu}>
+        <Link className="navbar__logo" to="/" onClick={closeMenu}>
           EO<span>/</span>
-        </a>
+        </Link>
 
         <button
           className="navbar__menu-button"
