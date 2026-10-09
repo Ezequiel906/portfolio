@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import "./Footer.css";
 
@@ -8,6 +8,7 @@ const EMAIL_ADDRESS = "kima.eze16@gmail.com";
 
 function Footer() {
   const { language } = useLanguage();
+  const { pathname } = useLocation();
   const content = language === "es"
     ? {
         role: "Desarrollador frontend",
@@ -36,6 +37,12 @@ function Footer() {
         rights: "All rights reserved.",
       };
 
+  const handleBackToTop = () => {
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="footer" id="contacto">
       <div className="footer__content">
@@ -59,7 +66,7 @@ function Footer() {
             <a href={`mailto:${EMAIL_ADDRESS}`}>{content.contact}</a>
           </nav>
 
-          <Link className="footer__back-to-top" to="/">{content.backToTop}</Link>
+          <Link className="footer__back-to-top" to="/" onClick={handleBackToTop}>{content.backToTop}</Link>
         </div>
       </div>
       <p className="footer__copyright">© {new Date().getFullYear()} Ezequiel. {content.rights}</p>
