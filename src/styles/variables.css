@@ -1,0 +1,26 @@
+:root {
+  --color-bg: #080808;
+  --color-bg-secondary: #101010;
+  --color-surface: #161616;
+  --color-surface-elevated: #1e1e1e;
+
+  --color-primary: #d4d4d4;
+  --color-primary-light: #f5f5f5;
+
+  --color-text: #f5f5f5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-tertiary: #737373;
+
+  --color-border: #2a2a2a;
+
+  --font-family: "Inter", sans-serif;
+
+  --container-width: 1200px;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}

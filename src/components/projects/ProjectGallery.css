@@ -1,0 +1,129 @@
+.project-gallery {
+  margin-top: clamp(80px, 12vw, 160px);
+}
+
+.project-gallery__content {
+  margin: 0 auto;
+  max-width: var(--container-width);
+}
+
+.project-gallery__heading > p {
+  color: var(--color-primary-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.project-gallery h2 {
+  font-size: clamp(2rem, 3.6vw, 3.5rem);
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+  margin-top: 18px;
+}
+
+.project-gallery__grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: clamp(40px, 6vw, 64px);
+}
+
+.project-gallery__image-button {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.project-gallery__image-button:hover {
+  border-color: var(--color-text-tertiary);
+  transform: translateY(-3px);
+}
+
+.project-gallery__image-button:focus-visible,
+.project-gallery__close:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 4px;
+}
+
+.project-gallery__image-button img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.project-gallery__image-button span {
+  color: var(--color-text-secondary);
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 14px 16px;
+}
+
+.project-gallery__lightbox {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.86);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 20;
+}
+
+.project-gallery__lightbox-content {
+  max-height: 90vh;
+  max-width: min(1200px, 100%);
+  position: relative;
+}
+
+.project-gallery__lightbox-content img {
+  display: block;
+  max-height: 90vh;
+  max-width: 100%;
+}
+
+.project-gallery__close {
+  align-items: center;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text);
+  cursor: pointer;
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 40px;
+}
+
+@media (max-width: 600px) {
+  .project-gallery {
+    margin-top: 72px;
+  }
+
+  .project-gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery__lightbox {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-gallery__image-button {
+    transition: none;
+  }
+
+  .project-gallery__image-button:hover {
+    transform: none;
+  }
+}

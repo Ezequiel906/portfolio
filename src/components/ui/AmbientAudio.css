@@ -1,0 +1,122 @@
+.ambient-audio,
+.ambient-audio__control {
+  bottom: 24px;
+  position: fixed;
+  right: 24px;
+  z-index: 10;
+}
+
+.ambient-audio {
+  animation: ambient-audio-enter 400ms ease-out both;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  max-width: 340px;
+  padding: 20px;
+}
+
+.ambient-audio h2 {
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.ambient-audio p {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin-top: 8px;
+}
+
+.ambient-audio__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.ambient-audio__button,
+.ambient-audio__control {
+  align-items: center;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 38px;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.ambient-audio__button {
+  flex: 1;
+  padding: 0 12px;
+}
+
+.ambient-audio__button--primary {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.ambient-audio__button--primary:hover {
+  background: var(--color-primary-light);
+}
+
+.ambient-audio__button--secondary,
+.ambient-audio__control {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.ambient-audio__button--secondary:hover,
+.ambient-audio__control:hover {
+  border-color: var(--color-text-tertiary);
+  color: var(--color-text);
+}
+
+.ambient-audio__button:focus-visible,
+.ambient-audio__control:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 3px;
+}
+
+.ambient-audio__control {
+  gap: 8px;
+  padding: 0 13px;
+}
+
+@keyframes ambient-audio-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .ambient-audio,
+  .ambient-audio__control {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .ambient-audio {
+    left: 16px;
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-audio {
+    animation: none;
+  }
+
+  .ambient-audio__button,
+  .ambient-audio__control {
+    transition: none;
+  }
+}

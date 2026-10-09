@@ -1,0 +1,115 @@
+.navbar {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: var(--container-width);
+  min-height: 72px;
+  padding: 0 24px;
+}
+
+.navbar__logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.navbar__logo span {
+  color: var(--color-primary);
+}
+
+.navbar__links {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+.navbar__links a {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.navbar__links a:hover,
+.navbar__links a:focus-visible {
+  color: var(--color-text);
+}
+
+.navbar__language-selector {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  display: flex;
+  padding: 3px;
+}
+
+.navbar__language-button {
+  background: transparent;
+  border-radius: 999px;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  min-height: 28px;
+  min-width: 32px;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.navbar__language-button:hover {
+  color: var(--color-text);
+}
+
+.navbar__language-button--active {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.navbar__language-button:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+.navbar__menu-button {
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+}
+
+@media (max-width: 767px) {
+  .navbar__content {
+    min-height: 64px;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .navbar__menu-button {
+    display: block;
+  }
+
+  .navbar__links {
+    background: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    left: 0;
+    padding: 24px 20px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+  }
+
+  .navbar__links--open {
+    display: flex;
+  }
+
+  .navbar__language-selector {
+    align-self: flex-start;
+  }
+}
